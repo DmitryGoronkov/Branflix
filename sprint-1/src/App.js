@@ -1,7 +1,9 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
-
+class firstComponent extend React.Component{
+  
+}
 function App() {
   return (
     <div className="App">
