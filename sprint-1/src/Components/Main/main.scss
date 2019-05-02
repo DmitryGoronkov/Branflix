@@ -1,0 +1,32 @@
+@import '../../Styles/Mixins.scss';
+@import '../../Styles/Variables.scss';
+@import '../../Styles/Font-face.scss';
+.main{
+    @include side-margin();
+    &__header{
+        @include header();
+    }
+    &__subinfo{
+        display: flex;
+        flex-direction: row;
+        &__by{
+        @include subheader();
+        }
+        &__date{
+            @include subheader();
+            color: $divider;
+        }
+    }
+    &__subbar{
+        display: flex;
+        &__views{
+            @include subheader-com()
+        }
+        &__likes{
+            @include subheader-com()
+        }
+    }
+    &__description{
+        @include paragraph()
+    }
+}
