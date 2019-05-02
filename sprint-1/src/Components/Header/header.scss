@@ -1,0 +1,47 @@
+@import '../../Styles/Mixins.scss';
+@import '../../Styles/Variables.scss';
+.main-header{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    @include side-margin();
+    &__logo{
+        margin-top: 0.5rem;
+        margin-bottom: 0.5rem;
+        height: 2rem;
+    }
+    &--row{
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        // justify-content: baseline;
+    }
+    &__search{
+        height: 3rem;
+        // display: flex;
+        // flex-direction: row;
+        width: 100%;
+        vertical-align: auto;
+        flex-grow: 100;
+        margin-bottom: 0.5rem;
+
+    }
+    &__image{
+        width: 3rem;
+        height: 3rem;
+        border-radius: 6rem;
+        object-fit: cover;
+        justify-self: right;
+    }
+    &__button{
+        height: 3rem;
+        background-color:$brainflix-blue;
+        @include labels-button();
+        // margin-top: 0.5rem;
+        // margin-bottom: 1rem;
+        border-radius: 0.25rem;
+        margin-right: 1rem;
+        flex-grow: 100;
+        
+    }
+}
