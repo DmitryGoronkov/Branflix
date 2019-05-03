@@ -15,7 +15,10 @@ export class Headermain extends React.Component {
                     <input type="text" className="main-header__search-container__bar" placeholder="Search" name="search"></input>
                 </form>
                 <div className="main-header--row">
-                    <button className="main-header__button"><img src={upload}/>UPLOAD</button>
+                    <button className="main-header__button">
+                        <img src={upload}/>
+                        <div className="main-header__button__text" >UPLOAD</div>
+                    </button>
                     <img src ={ava} alt="ava" className="main-header__image"/>
                 </div>
             </header>

@@ -3,14 +3,20 @@
 @import '../../Styles/Font-face.scss';
 .main{
     @include side-margin();
+    margin-top: 2rem;
+    margin-bottom: 2.5rem;
     &__header{
         @include header();
+        margin-bottom: 1rem;
     }
     &__subinfo{
         display: flex;
         flex-direction: row;
+        margin-bottom: 1.5rem;
+        
         &__by{
         @include subheader();
+        margin-right: 0.5rem;
         }
         &__date{
             @include subheader();
@@ -19,14 +25,29 @@
     }
     &__subbar{
         display: flex;
+        align-content: center;
+        padding-bottom: 1.5rem;
+        border-bottom: solid 1px $divider;
         &__views{
-            @include subheader-com()
+            display: flex;
+            align-items: center;
+            @include subheader-com();
+            margin-right: 1.4rem;
+            &__icon{
+                margin-right: 0.5rem;
+            }
         }
         &__likes{
-            @include subheader-com()
+            display: flex;
+            align-items: center;
+            @include subheader-com();
+            &__icon{
+                margin-right: 0.5rem;
+            }
         }
     }
     &__description{
+        margin-top: 1.5rem;
         @include paragraph()
     }
 }

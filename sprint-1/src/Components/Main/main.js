@@ -13,11 +13,11 @@ export class Main extends React.Component {
                 </div>
                 <div className="main__subbar">
                     <div className="main__subbar__views">
-                        <img src={viewsIcon}/>
+                        <img className="main__subbar__likes__icon" src={viewsIcon}/>
                         <span>1001023</span>
                     </div>
                     <div className="main__subbar__likes">
-                        <img src={likesIcon}/>
+                        <img className="main__subbar__likes__icon" src={likesIcon}/>
                         <span>110985</span>
                     </div>
                 </div>

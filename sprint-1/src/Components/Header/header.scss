@@ -36,6 +36,13 @@
         border-radius: 0.25rem;
         margin-right: 1rem;
         flex-grow: 100;
+        border:none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        &__text{
+            margin-left: 0.5rem;
+        }
         
         
     }
