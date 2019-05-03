@@ -1,0 +1,53 @@
+@import '../../Styles/Mixins.scss';
+@import '../../Styles/Variables.scss';
+@import '../../Styles/Font-face.scss';
+.commentsec__existing{
+    display: flex;
+    flex-direction: column;
+    @include side-margin();
+    @media (min-width: 768px){
+        margin-left: 100px;
+        margin-right: 100px;
+    }
+    @media (min-width: 1440px){
+        margin-left: 276px;
+        margin-right: 276px;
+    }
+    &__one{
+        padding-top: 1.5rem;
+        border-top: solid 1px $divider;
+        display: flex;
+        &__image{
+            background-color: $divider;
+            width: 2.25rem;
+            height: 2.25rem;
+            border-radius: 1.2rem;
+        }
+        &__comment{
+            display: flex;
+            flex-direction: column;
+            margin-left:1rem;
+            width: 80%;
+            &__header{
+                display: flex;
+                justify-content: space-between;
+                &--name{
+                    @include subheader();
+                }
+                &--date{
+                    color: $divider;
+                }
+            }
+            &__body{
+                @include subheader-com();
+                margin-top: 1rem;
+                margin-bottom: 1.5rem;
+                
+            }
+            
+        }
+    }
+    border-bottom: solid 1px $divider;
+    margin-bottom: 2.5rem;
+}
+
