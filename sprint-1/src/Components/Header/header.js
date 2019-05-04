@@ -16,7 +16,7 @@ export class Headermain extends React.Component {
                 </form>
                 <div className="main-header--row">
                     <button className="main-header__button">
-                        <img src={upload}/>
+                        <img src={upload} alt="plus"/>
                         <div className="main-header__button__text" >UPLOAD</div>
                     </button>
                     <img src ={ava} alt="ava" className="main-header__image"/>
