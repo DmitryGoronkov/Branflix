@@ -8,3 +8,9 @@
     @include side-margin();
     @include labels();
 }
+.desktopLayout{
+    @media (min-width: 1440px){
+    display: flex;
+    flex-direction: row;
+    }
+}

@@ -1,17 +1,19 @@
 import React from 'react';
 import './main.scss';
-import {Headermain} from '../Header/header.js';
+import {Navbar} from '../Navigation/navbar.js';
 import {Video} from '../Video/video.js'
 import {VideoInfo} from '../VideoInfo/videoinfo.js'
 import {CommentsAdd} from '../CommentsAdd/commentsAdd.js'
 import {CommentsList} from '../CommentsList/commentsList.js'
 import timeConversion from '../TimeConversion/timeConversion.js'
 import {NextVideo} from '../NextVideo/nextVideo.js'
+import { throwStatement } from '@babel/types';
 
 
 export class Main extends React.Component {
 
   state = {
+    currentVid: {},
     bigVid: {
       id: '0',
       title: 'BMX Rampage: 201 Highlights',
@@ -99,46 +101,55 @@ export class Main extends React.Component {
       image: 'video-list-8.jpg'
     }
   ]
-  }
-
+ 
+  };
   
   render() {
     const {title,description,channel,views,likes,video,image,timestamp} = this.state.bigVid;
     const numberOfComments = this.state.bigVid.comments.length;
     return (
-      <div> 
-          <Headermain></Headermain>
+      <main> 
+          <Navbar></Navbar>
           <Video video={video} image={image}></Video> 
-          <VideoInfo title={title} description={description} channel={channel} views={views} likes={likes} timestamp={timestamp}></VideoInfo>
-          <CommentsAdd numberOfComments={numberOfComments}></CommentsAdd>
-          {this.state.bigVid.comments.map((item) => {
-                      return (<CommentsList 
-                              key={item.id}
-                              name={item.name}
-                              date={timeConversion(item.date)} 
-                              comment={item.comment}
-                              comImage={item.image} 
-                              />);                  }
-          )
-          }
-          <div className="label">NEXT VIDEO</div>
-          {this.state.vidList.map((item) => {
-                      return (<NextVideo 
-                              key={item.id}
-                              title={item.title}
-                              channel={item.channel} 
-                              nextVideoImage={item.image}
-                              
-                              />);                  }
-          )
-          }
-          
-
-     
-     
-     
-    
-      </div>
+          <section className="desktopLayout">
+            <div>
+              <VideoInfo 
+                      title={title}
+                      description={description} 
+                      channel={channel} 
+                      views={views} 
+                      likes={likes} 
+                      timestamp={timestamp}>
+              </VideoInfo>
+              <CommentsAdd numberOfComments={numberOfComments}></CommentsAdd>
+              {this.state.bigVid.comments.map((item) => {
+                        return (<CommentsList 
+                                key={item.id}
+                                name={item.name}
+                                date={timeConversion(item.date)} 
+                                comment={item.comment}
+                                comImage={item.image} 
+                                />);  
+                        })
+              }
+            </div>
+            <div>
+              <div className="label">NEXT VIDEO</div>
+              { 
+                this.state.vidList.map((item) => {
+                          return (<NextVideo 
+                                  key={item.id}
+                                  title={item.title}
+                                  channel={item.channel} 
+                                  nextVideoImage={item.image}
+                                  
+                                  />);   
+                          })
+              
+              }
+            </div>
+          </section>
+        </main>
     );
   }
 }

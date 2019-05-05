@@ -16,6 +16,6 @@ export class CommentsList extends React.Component {
                         </div>
                     </div>
                 </section>
-        )
+            )
     }
 }

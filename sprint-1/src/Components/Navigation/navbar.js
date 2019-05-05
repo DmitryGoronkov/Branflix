@@ -1,11 +1,10 @@
 import React from 'react';
-import './header.scss';
-// import './Styles/Mixins.scss'
+import './navbar.scss';
 import logo from '../../Assets/Logo/Logo-brainflix.svg'
 import ava from '../../Assets/Images/Mohan-muruge.jpg'
 import upload from '../../Assets/Icons/SVG/Icon-upload.svg'
 import searchIcon from '../../Assets/Icons/SVG/Icon-search.svg'
-export class Headermain extends React.Component {
+export class Navbar extends React.Component {
     render(){
         return(
             <header className = "main-header">
@@ -15,9 +14,9 @@ export class Headermain extends React.Component {
                     <input type="text" className="main-header__search-container__bar" placeholder="Search" name="search"></input>
                 </form>
                 <div className="main-header--row">
-                    <button className="main-header__button">
+                    <button className="main-header__navbutton">
                         <img src={upload} alt="plus"/>
-                        <div className="main-header__button__text" >UPLOAD</div>
+                        <div className="main-header__navbutton__text" >UPLOAD</div>
                     </button>
                     <img src ={ava} alt="ava" className="main-header__image"/>
                 </div>

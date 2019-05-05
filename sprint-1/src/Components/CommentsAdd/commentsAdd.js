@@ -9,8 +9,10 @@ export class CommentsAdd extends React.Component {
                     <div className ="commentsec__inputsec__image"></div>
                     <form className ="commentsec__inputsec__form">
                         <label htmlFor="comment">JOIN THE CONVERSATION</label>
-                        <textarea name="comment" id="comment" rows="3"></textarea>
-                        <button className="commentsec__inputsec__form__button" type="submit">COMMENT</button>
+                        <div className="commentsec__inputsec__form--flex">
+                            <textarea name="comment" id="comment" rows="3"></textarea>
+                            <button className="commentsec__inputsec__form__button" type="submit">COMMENT</button>
+                        </div>
                     </form>
                 </div>
             </section>
