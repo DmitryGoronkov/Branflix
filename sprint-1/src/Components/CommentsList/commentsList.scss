@@ -2,7 +2,8 @@
 @import '../../Styles/Variables.scss';
 @import '../../Styles/Font-face.scss';
 .commentsec__existing{
-    // border: solid 5px red;
+    border-top: solid 1px $divider;
+    padding-bottom: 1.5rem;
     display: flex;
     flex-direction: column;
     @include side-margin();
@@ -16,7 +17,7 @@
     }
     &__one{
         padding-top: 1.5rem;
-        // 
+        
         display: flex;
         &__image{
             width: 2.25rem;
@@ -42,7 +43,7 @@
             &__body{
                 @include subheader-com();
                 margin-top: 1rem;
-                margin-bottom: 1.5rem;
+                
                 
             }
             

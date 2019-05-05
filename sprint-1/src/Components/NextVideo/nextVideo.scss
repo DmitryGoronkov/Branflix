@@ -1,0 +1,26 @@
+@import '../../Styles/Mixins.scss';
+@import '../../Styles/Variables.scss';
+@import '../../Styles/Font-face.scss';
+.nextVideo{
+    display:flex;
+    @include side-margin();
+    margin-bottom: 1.5rem;
+    &__image{
+        width: 7.5rem;
+        height: 4.375rem;
+        margin-right: 1rem;
+        border-radius: 0.25rem;
+    }
+    &__description{
+        display: flex;
+        flex-direction: column;
+        &__header{
+            @include subheader();
+            margin-bottom: 1rem;
+            line-height: 0.875rem;
+        }
+        &__by{
+            @include subheader-com();
+        }
+    }
+}

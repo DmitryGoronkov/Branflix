@@ -1,10 +1,12 @@
 import React from 'react';
+import './main.scss';
 import {Headermain} from '../Header/header.js';
 import {Video} from '../Video/video.js'
 import {VideoInfo} from '../VideoInfo/videoinfo.js'
 import {CommentsAdd} from '../CommentsAdd/commentsAdd.js'
 import {CommentsList} from '../CommentsList/commentsList.js'
-// import Video2 from '../../Assets/Video/BrainStationSampleVideo.mp4'
+import timeConversion from '../TimeConversion/timeConversion.js'
+import {NextVideo} from '../NextVideo/nextVideo.js'
 
 
 export class Main extends React.Component {
@@ -20,34 +22,83 @@ export class Main extends React.Component {
       likes: '110,985',
       duration: '0:20',
       video:'BrainStationSampleVideo.mp4',
-      timestamp: 1557003818445,
+      timestamp: 1555700251844,
       comments: [
         { id: "0",
           name: "Micheal Lyons",
-          date: "12/18/2018",
+          date: 1545700251844,
           comment: "They BLEW the ROOF off at their last show, once everyone started figuring out they were going. This is still simply the greatest opening of a concert I have EVER witnessed.",
           image: "Michael.jpg"
         },
         { id: "1",
           name: "Gary Wong",
-          date: "12/12/2018",
+          date: 1535700251844,
           comment: "Every time I see him shred I feel so motivated to get off my couch and hop on my board. He’s so talented! I wish I can ride like him one day so I can really enjoy myself!",
           image: "Gary.jpg"
         },
         { id: "2",
           name: "Theodore Duncan",
-          date: "11/15/2018",
+          date: 1531700251844,
           comment: "How can someone be so good!!! You can tell he lives for this and loves to do it every day. Everytime I see him I feel instantly happy! He’s definitely my favorite ever!",
           image: "Teo.jpg"
         }
       ]
     },
-    vidList: {
-      id: 'type of <string>', 
-      title: 'type of <string>', 
-      channel: 'type of <string>', 
-      image: 'type of <string>' 
+    vidList: [{
+      id: '0', 
+      title: 'BMX Rampage: 201 Highlights', 
+      channel: 'Red Cow', 
+      image: 'video-list-0.jpg'
+    },
+    {
+      id: '1', 
+      title: 'Become a travel Pro In One Easy Lesson', 
+      channel: 'Scotty Cranmer',
+      image: 'video-list-1.jpg'
+    },
+    {
+      id: '2', 
+      title: 'Les Houches The Hidden Gem Of The Chamonix', 
+      channel: 'Cornelia Blair', 
+      image: 'video-list-2.jpg'
+    },
+    {
+      id: '3', 
+      title: 'Travel Health Useful Medical Information For', 
+      channel: 'Glen Harper', 
+      image: 'video-list-3.jpg'
+    },
+    {
+      id: '4', 
+      title: 'Cheap Airline Tickets Great Ways To Save', 
+      channel: 'Emily Harper', 
+      image: 'video-list-4.jpg'
+    },
+    {
+      id: '5', 
+      title: 'Take A Romantic Break In A Boutique Hotel', 
+      channel: 'Ethan Owen', 
+      image: 'video-list-5.jpg'
+    },
+    {
+      id: '6', 
+      title: 'Choose The Perfect Accommodations', 
+      channel: 'Lydia Perez', 
+      image: 'video-list-6.jpg'
+    },
+    {
+      id: '7', 
+      title: 'Cruising Destination Ideas', 
+      channel: 'Timothy Austin', 
+      image: 'video-list-7.jpg'
+    },
+    {
+      id: '8', 
+      title: 'Train Travel On Track For Safety', 
+      channel: 'Scotty Cranmer', 
+      image: 'video-list-8.jpg'
     }
+  ]
   }
 
   
@@ -64,12 +115,24 @@ export class Main extends React.Component {
                       return (<CommentsList 
                               key={item.id}
                               name={item.name}
-                              date={item.date} 
+                              date={timeConversion(item.date)} 
                               comment={item.comment}
                               comImage={item.image} 
                               />);                  }
           )
           }
+          <div className="label">NEXT VIDEO</div>
+          {this.state.vidList.map((item) => {
+                      return (<NextVideo 
+                              key={item.id}
+                              title={item.title}
+                              channel={item.channel} 
+                              nextVideoImage={item.image}
+                              
+                              />);                  }
+          )
+          }
+          
 
      
      

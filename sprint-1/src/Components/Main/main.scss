@@ -1,0 +1,10 @@
+@import '../../Styles/Mixins.scss';
+@import '../../Styles/Variables.scss';
+@import '../../Styles/Font-face.scss';
+.label{
+    border-top: solid 1px $divider;
+    padding-top: 2.5rem;
+    margin-bottom: 2.5rem;
+    @include side-margin();
+    @include labels();
+}
