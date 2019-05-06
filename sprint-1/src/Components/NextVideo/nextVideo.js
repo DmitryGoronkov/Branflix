@@ -9,7 +9,7 @@ export class NextVideo extends React.Component {
         
         return(
             <section className="nextVideo">
-                <img src={require(`../../Assets/Images/${this.props.nextVideoImage}`)} className="nextVideo__image"/>
+                <img src={require(`../../Assets/Images/${this.props.nextVideoImage}`)} alt="next video icon" className="nextVideo__image"/>
                 <div className="nextVideo__description">
                     <div className="nextVideo__description__header">{textLimit(this.props.title)}</div>
                     <div className="nextVideo__description__by">{this.props.channel}</div>

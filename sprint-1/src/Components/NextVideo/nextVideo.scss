@@ -24,10 +24,10 @@
         height: 4.375rem;
         &__header{
             @include subheader();
-            margin-bottom: 1rem;
+            margin-bottom: 0.3rem;
             // line-height: 0.875rem;
             
-            height: 32px;
+            height: 44px;
             @media (min-width: 768px){
                 margin-bottom: 0;
                 height: auto;

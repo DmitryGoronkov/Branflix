@@ -7,10 +7,6 @@ class App extends React.Component {
           <Main></Main>
          
 
-     
-     
-     
-    
       </div>
     );
   }

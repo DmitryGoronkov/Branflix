@@ -14,3 +14,10 @@
     flex-direction: row;
     }
 }
+.desktopBottom{
+    @media (min-width: 1440px){
+        border-bottom: solid 1px $divider;
+        margin-bottom: 1rem;
+        margin-left: 180px;
+    }
+}

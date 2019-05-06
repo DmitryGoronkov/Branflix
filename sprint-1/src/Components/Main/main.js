@@ -7,13 +7,12 @@ import {CommentsAdd} from '../CommentsAdd/commentsAdd.js'
 import {CommentsList} from '../CommentsList/commentsList.js'
 import timeConversion from '../TimeConversion/timeConversion.js'
 import {NextVideo} from '../NextVideo/nextVideo.js'
-import { throwStatement } from '@babel/types';
+
 
 
 export class Main extends React.Component {
 
   state = {
-    currentVid: {},
     bigVid: {
       id: '0',
       title: 'BMX Rampage: 201 Highlights',
@@ -107,6 +106,13 @@ export class Main extends React.Component {
   render() {
     const {title,description,channel,views,likes,video,image,timestamp} = this.state.bigVid;
     const numberOfComments = this.state.bigVid.comments.length;
+    const listToRender = [];
+    for (let i=0; i<this.state.vidList.length; i++){
+      if (this.state.vidList[i].id !== this.state.bigVid.id){
+        listToRender.push(this.state.vidList[i]);
+      }
+    }
+    
     return (
       <main> 
           <Navbar></Navbar>
@@ -132,19 +138,21 @@ export class Main extends React.Component {
                                 />);  
                         })
               }
+              <div className="desktopBottom"></div>
             </div>
             <div>
               <div className="label">NEXT VIDEO</div>
-              { 
-                this.state.vidList.map((item) => {
-                          return (<NextVideo 
+              {listToRender.map((item) => {
+                return (<NextVideo 
                                   key={item.id}
                                   title={item.title}
                                   channel={item.channel} 
                                   nextVideoImage={item.image}
-                                  
-                                  />);   
-                          })
+                                    
+                                />);   
+                            
+                        })
+                          
               
               }
             </div>

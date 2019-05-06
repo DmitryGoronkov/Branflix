@@ -33,11 +33,21 @@
             flex-direction: column;
             margin-left:1rem;
             width: 80%;
+            @media (min-width: 768px){
+                width: 624px;
+            }
             &__header{
                 display: flex;
                 justify-content: space-between;
+                @media (min-width: 768px){
+                    justify-content: unset;
+                    align-items: baseline;
+                }
                 &--name{
                     @include subheader();
+                    @media (min-width: 768px){
+                        margin-right: 1rem;
+                    }
                 }
                 &--date{
                     color: $divider;
