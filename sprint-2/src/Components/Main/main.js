@@ -11,7 +11,7 @@ import axios from 'axios'
 import {Link} from "react-router-dom"
 
 const apiKey="22945958-e024-4268-bb49-d7e141ec7dd2"
-
+let currentId = 0;
 export class Main extends React.Component {
 
   state = {
@@ -36,7 +36,21 @@ export class Main extends React.Component {
       })
       .catch (error => {
         console.log("Error receiving data")})
-      }
+  }
+  componentDidUpdate(){
+    // do i need to change the video? If statement
+    if (this.state.bigVid.id !== this.props.match.params.id){
+    axios.get (`https://project-2-api.herokuapp.com/videos/${this.props.match.params.id}/?api_key=${apiKey}`)
+      .then (response => {
+        this.setState({bigVid: response.data})
+        console.log(response.data);
+        currentId = response.data.id;
+      })
+      .catch (error => {
+        console.log("Error receiving data")})
+    }
+  }
+  
   
   render() {
     const {title,description,channel,views,likes,video,image,timestamp} = this.state.bigVid;
