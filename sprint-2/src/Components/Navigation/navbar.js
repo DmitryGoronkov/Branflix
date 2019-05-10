@@ -9,16 +9,16 @@ export class Navbar extends React.Component {
     render(){
         return(
             <header className = "main-header">
-                <Link to= {`/`}><img src={logo}  className="main-header__logo" alt="logo" /></Link>
+                <div className="main-header__logo"><Link to= {`/`}><img src={logo} alt="logo" /></Link></div>
                 <form className="main-header__search-container">
                     <button className="main-header__search-container__button" type="submit"><img className="main-header__search-container__icon" src ={searchIcon} alt="S"/></button>
                     <input type="text" className="main-header__search-container__bar" placeholder="Search" name="search"></input>
                 </form>
                 <div className="main-header--row">
-                    <Link to={`/upload`}><button className="main-header__navbutton">
+                    <div className="main-header__navbutton--outter"><Link to={`/upload`}><button className="main-header__navbutton">
                         <img src={upload} alt="plus"/>
                         <div className="main-header__navbutton__text" >UPLOAD</div>
-                    </button></Link>
+                    </button> </Link></div>
                     <img src ={ava} alt="ava" className="main-header__image"/>
                 </div>
             </header>

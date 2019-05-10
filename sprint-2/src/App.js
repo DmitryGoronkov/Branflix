@@ -1,8 +1,9 @@
 import React from 'react';
 import {Main} from './Components/Main/main.js';
 import {Navbar} from './Components/Navigation/navbar.js';
-import {Upload} from './Components/Upload/upload.js'
-import {BrowserRouter, Route, Switch} from "react-router-dom"
+import {Upload} from './Components/Upload/upload.js';
+import {BrowserRouter, Route, Switch} from "react-router-dom";
+import {Errorpage} from './Components/Error/error.js';
 class App extends React.Component {
   render() {
     return (
@@ -10,10 +11,12 @@ class App extends React.Component {
           <BrowserRouter>
               <Navbar></Navbar>
               <Switch>
-
+                  
                   <Route path="/" exact component={Main} />  
                   <Route path="/upload/" component={Upload} />
-                  <Route path="/:id" component={Main} />           
+                  {/* <Route path="/404" component={Errorpage} />   */}
+                  <Route path="/:id" component={Main} /> 
+                          
               </Switch>
           
           </BrowserRouter>

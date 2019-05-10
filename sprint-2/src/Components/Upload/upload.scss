@@ -1,0 +1,23 @@
+@import '../../Styles/Mixins.scss';
+@import '../../Styles/Variables.scss';
+@import '../../Styles/Font-face.scss';
+.upload{
+    border-top: solid 1px $divider;
+    &--sidemargin{
+        @include side-margin();
+    }
+    &__header{
+        @include header();
+        margin-top: 1.5rem;
+        margin-bottom: 2rem;
+    }
+    &__form{
+        &__image{
+            width: 288px;
+            height: 153px;
+        }
+        &__labels{
+            @include labels();
+        }
+    }
+}

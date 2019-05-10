@@ -40,6 +40,8 @@ export class Main extends React.Component {
   }
   componentDidUpdate(){
     // do i need to change the video? If statement
+    console.log(this.state.bigVid.id);
+    console.log(this.props.match.params.id);
     if (this.state.bigVid.id !== this.props.match.params.id && this.props.match.params.id){
     axios.get (`https://project-2-api.herokuapp.com/videos/${this.props.match.params.id}/?api_key=${apiKey}`)
       .then (response => {
@@ -50,6 +52,9 @@ export class Main extends React.Component {
       })
       .catch (error => {
         console.log("Error receiving data")})
+       
+          // this.props.history.push("/404")
+        
     }
   }
   
@@ -107,6 +112,7 @@ export class Main extends React.Component {
                           
               
               }
+              <Link to="/poopy" > POOPY</Link>
             </div>
           </section>
         </main>
