@@ -1,17 +1,18 @@
 import React from 'react';
 import './main.scss';
-import {Navbar} from '../Navigation/navbar.js';
+
 import {Video} from '../Video/video.js'
 import {VideoInfo} from '../VideoInfo/videoinfo.js'
 import {CommentsAdd} from '../CommentsAdd/commentsAdd.js'
 import {CommentsList} from '../CommentsList/commentsList.js'
 import timeConversion from '../TimeConversion/timeConversion.js'
+import commentsImageAssign from '../CommentsImageAssign/commentsImageAssign.js'
 import {NextVideo} from '../NextVideo/nextVideo.js'
 import axios from 'axios'
 import {Link} from "react-router-dom"
 
 const apiKey="22945958-e024-4268-bb49-d7e141ec7dd2"
-let currentId = 0;
+
 export class Main extends React.Component {
 
   state = {
@@ -39,12 +40,13 @@ export class Main extends React.Component {
   }
   componentDidUpdate(){
     // do i need to change the video? If statement
-    if (this.state.bigVid.id !== this.props.match.params.id){
+    if (this.state.bigVid.id !== this.props.match.params.id && this.props.match.params.id){
     axios.get (`https://project-2-api.herokuapp.com/videos/${this.props.match.params.id}/?api_key=${apiKey}`)
       .then (response => {
         this.setState({bigVid: response.data})
         console.log(response.data);
-        currentId = response.data.id;
+        console.log(this.state.bigVid);
+        
       })
       .catch (error => {
         console.log("Error receiving data")})
@@ -56,7 +58,7 @@ export class Main extends React.Component {
     const {title,description,channel,views,likes,video,image,timestamp} = this.state.bigVid;
     const numberOfComments = this.state.bigVid.comments.length;
     const listToRender = [];
-    console.log(this.state.vidList);
+    
     for (let i=0; i<this.state.vidList.length; i++){
       if (this.state.vidList[i].id !== this.state.bigVid.id){
         listToRender.push(this.state.vidList[i]);
@@ -65,7 +67,7 @@ export class Main extends React.Component {
     
     return (
       <main> 
-          <Navbar></Navbar>
+          
             <Video video={video} image={image}></Video> 
             <section className="desktopLayout">
              <div>
@@ -82,9 +84,9 @@ export class Main extends React.Component {
                         return (<CommentsList 
                                 key={item.id}
                                 name={item.name}
-                                date={timeConversion(item.date)} 
+                                date={timeConversion(item.timestamp)} 
                                 comment={item.comment}
-                                comImage={item.image} 
+                                comImage={commentsImageAssign(item.name)} 
                                 />);  
                         })
               }
@@ -93,7 +95,7 @@ export class Main extends React.Component {
             <div>
               <div className="label">NEXT VIDEO</div>
               {listToRender.map((item) => {
-                return (<Link to= {`/mainvideo/${item.id}`}><NextVideo 
+                return (<Link to= {`/${item.id}`}><NextVideo 
                                   key={item.id}
                                   title={item.title}
                                   channel={item.channel} 

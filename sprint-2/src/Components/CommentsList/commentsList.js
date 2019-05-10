@@ -6,7 +6,7 @@ export class CommentsList extends React.Component {
         return(
                 <section className ="commentsec__existing">   
                     <div className="commentsec__existing__one">
-                        <img className ="commentsec__existing__one__image"  alt="ava"/>
+                        <img className ="commentsec__existing__one__image" src={require(`../../Assets/Images/${this.props.comImage}`)} alt="ava"/>
                         <div className ="commentsec__existing__one__comment">
                             <div className ="commentsec__existing__one__comment__header">
                                 <div className="commentsec__existing__one__comment__header--name">{this.props.name}</div>
