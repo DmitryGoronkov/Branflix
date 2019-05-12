@@ -1,5 +1,5 @@
 import React from 'react';
-import './video.scss';
+import './Video.scss';
 import playIcon from '../../Assets/Icons/SVG/Icon-play.svg'
 import fullIcon from '../../Assets/Icons/SVG/Icon-fullscreen.svg'
 import volumeIcon from '../../Assets/Icons/SVG/Icon-volume.svg'
@@ -9,7 +9,7 @@ export class Video extends React.Component {
     render(){
         const {video,image,duration} = this.props;
         return(
-            <main>
+            <main className="mainV">
                 <video src={video+apiKey} className = "mainVideo" poster={image}></video>
                 <div className="controls">
                     <div className="controls__play">
@@ -23,9 +23,7 @@ export class Video extends React.Component {
                         <img src={fullIcon} alt="play"/>
                         <img src={volumeIcon} alt="play"/>
                     </div>
-                    
                 </div>
-                
             </main>
         )
     }

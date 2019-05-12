@@ -7,15 +7,12 @@
     display: flex;
     flex-direction: column;
     @include side-margin();
-   
     @media (min-width: 1440px){
         margin-left: 180px;
         margin-right: 0;
-        
     }
     &__one{
         padding-top: 1.5rem;
-        
         display: flex;
         &__image{
             width: 2.25rem;
@@ -56,12 +53,9 @@
             &__body{
                 @include subheader-com();
                 margin-top: 1rem;
-                
-                
             }
             
         }
     }
-   
 }
 

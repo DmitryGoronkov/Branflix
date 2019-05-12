@@ -1,6 +1,6 @@
 
 import React from 'react';
-import './commentsList.scss';
+import './CommentsList.scss';
 export class CommentsList extends React.Component {
     render(){
         return(

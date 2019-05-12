@@ -1,5 +1,5 @@
 import React from 'react';
-import './upload.scss';
+import './Upload.scss';
 export class Upload extends React.Component {
     render(){
         return(

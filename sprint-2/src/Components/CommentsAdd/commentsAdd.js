@@ -1,5 +1,5 @@
 import React from 'react';
-import './commentsAdd.scss';
+import './CommentsAdd.scss';
 export class CommentsAdd extends React.Component {
     render(){
         return(

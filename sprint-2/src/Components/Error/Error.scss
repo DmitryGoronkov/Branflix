@@ -1,0 +1,12 @@
+@import '../../Styles/Mixins.scss';
+@import '../../Styles/Variables.scss';
+@import '../../Styles/Font-face.scss';
+.errorpage{
+    @include side-margin();
+    @include header();
+    color: $brainflix-blue;
+    margin-left: 1rem;
+    @media (min-width: 1440px){
+        margin-left: 180px;
+    }
+}

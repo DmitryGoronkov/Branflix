@@ -1,8 +1,8 @@
 import React from 'react';
-import './videoinfo.scss';
+import './Videoinfo.scss';
 import viewsIcon from '../../Assets/Icons/SVG/Icon-views.svg';
 import likesIcon from '../../Assets/Icons/SVG/Icon-likes.svg';
-import timeConversion from '../TimeConversion/timeConversion.js'
+import timeConversion from '../TimeConversion/TimeConversion.js'
 export class VideoInfo extends React.Component {
 
     render(){

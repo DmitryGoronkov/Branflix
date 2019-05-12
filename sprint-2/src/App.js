@@ -1,27 +1,22 @@
 import React from 'react';
-import {Main} from './Components/Main/main.js';
-import {Navbar} from './Components/Navigation/navbar.js';
-import {Upload} from './Components/Upload/upload.js';
-import {BrowserRouter, Route, Switch} from "react-router-dom";
-import {Errorpage} from './Components/Error/error.js';
+import { Main } from './Components/Main/Main.js';
+import { Navigation } from './Components/Navigation/Navigation.js';
+import { Upload } from './Components/Upload/Upload.js';
+import { BrowserRouter, Route, Switch } from "react-router-dom";
+import { Errorpage } from "./Components/Error/Error.js"
 class App extends React.Component {
   render() {
     return (
-      <div> 
-          <BrowserRouter>
-              <Navbar></Navbar>
-              <Switch>
-                  
-                  <Route path="/" exact component={Main} />  
-                  <Route path="/upload/" component={Upload} />
-       
-                  <Route path="/:id" component={Main} /> 
-                          
-              </Switch>
-          
-          </BrowserRouter>
-         
-
+      <div>
+        <BrowserRouter>
+          <Navigation></Navigation>
+          <Switch>
+            <Route path="/" exact component={Main} />
+            <Route path="/upload/" component={Upload} />
+            <Route path="/videos/:id" component={Main} />
+            <Route component={Errorpage} />
+          </Switch>
+        </BrowserRouter>
       </div>
     );
   }
