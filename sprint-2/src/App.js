@@ -14,7 +14,7 @@ class App extends React.Component {
                   
                   <Route path="/" exact component={Main} />  
                   <Route path="/upload/" component={Upload} />
-                  {/* <Route path="/404" component={Errorpage} />   */}
+       
                   <Route path="/:id" component={Main} /> 
                           
               </Switch>

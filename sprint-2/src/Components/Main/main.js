@@ -52,15 +52,13 @@ export class Main extends React.Component {
       })
       .catch (error => {
         console.log("Error receiving data")})
-       
-          // this.props.history.push("/404")
-        
+         
     }
   }
   
   
   render() {
-    const {title,description,channel,views,likes,video,image,timestamp} = this.state.bigVid;
+    const {title,description,channel,views,likes,video,image,timestamp,duration} = this.state.bigVid;
     const numberOfComments = this.state.bigVid.comments.length;
     const listToRender = [];
     
@@ -73,7 +71,7 @@ export class Main extends React.Component {
     return (
       <main> 
           
-            <Video video={video} image={image}></Video> 
+            <Video video={video} image={image} duration={duration}></Video> 
             <section className="desktopLayout">
              <div>
               <VideoInfo 
@@ -112,7 +110,6 @@ export class Main extends React.Component {
                           
               
               }
-              <Link to="/poopy" > POOPY</Link>
             </div>
           </section>
         </main>
