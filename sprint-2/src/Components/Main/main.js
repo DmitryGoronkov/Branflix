@@ -14,11 +14,38 @@ const apiKey="22945958-e024-4268-bb49-d7e141ec7dd2"
 
 export class Main extends React.Component {
   state = {
+    comment: '',
+    commentAdded: false,
     mainpage: true,
     bigVid: { comments: []},
     vidList: []
   };
-
+  handleCommentChange = (e) =>{
+    
+    this.setState({
+      comment: e.target.value
+    })
+    
+  }
+  handleSubmit = (e) =>{
+    e.preventDefault();
+    let id = '';
+    if (!this.props.match.params.id){
+      id="1af0jruup5gu"
+    } else {
+      id = this.props.match.params.id
+    }
+    axios.post (`https://project-2-api.herokuapp.com/videos/${id}/comments?api_key=${apiKey}`, {
+      name: "Mohan",
+      comment: this.state.comment
+      })
+      .then (response => {
+        console.log(response);
+        this.setState({
+          commentAdded:true
+        })
+      })
+  }
   componentDidMount(){
     axios.get (`https://project-2-api.herokuapp.com/videos?api_key=${apiKey}`)
       .then (response => {
@@ -37,6 +64,26 @@ export class Main extends React.Component {
       }
 
   componentDidUpdate(){
+    if (this.state.commentAdded){
+      console.log("comment added");
+      let id = "";
+      if (this.props.match.params.id){
+        id = this.props.match.params.id;
+      } else { 
+        id = "1af0jruup5gu"
+      }
+      
+      axios.get (`https://project-2-api.herokuapp.com/videos/${id}/?api_key=${apiKey}`)
+      .then (response => {
+        this.setState({bigVid: response.data, commentAdded: false})
+        console.log(response.data);
+      })
+      .catch (error => {
+        console.log("Error receiving data")})
+      
+
+      
+    }
     if (this.state.bigVid.id !== this.props.match.params.id && this.props.match.params.id){
       axios
         .get (`https://project-2-api.herokuapp.com/videos/${this.props.match.params.id}/?api_key=${apiKey}`)
@@ -67,7 +114,7 @@ export class Main extends React.Component {
           console.log("Error receiving data")})
         } 
       }
-  
+      
   
   render() {
     const {title,description,channel,views,likes,video,image,timestamp,duration} = this.state.bigVid;
@@ -93,7 +140,7 @@ export class Main extends React.Component {
               likes={likes}
               timestamp={timestamp}>
             </VideoInfo>
-            <CommentsAdd numberOfComments={numberOfComments}></CommentsAdd>
+            <CommentsAdd numberOfComments={numberOfComments} submit={this.handleSubmit} change={this.handleCommentChange} val={this.state.comment}></CommentsAdd>
             {this.state.bigVid.comments.map((item, index) => {
               return (<CommentsList
                 key={index}
