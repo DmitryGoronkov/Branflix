@@ -34,7 +34,8 @@ export class Main extends React.Component {
       id="1af0jruup5gu"
     } else {
       id = this.props.match.params.id
-    }
+  }
+  
     axios.post (`https://project-2-api.herokuapp.com/videos/${id}/comments?api_key=${apiKey}`, {
       name: "Mohan",
       comment: this.state.comment
