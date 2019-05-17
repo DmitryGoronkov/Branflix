@@ -1,5 +1,5 @@
 import React from 'react';
-import './Main.scss';
+import './main.scss';
 import {Video} from '../Video/Video.js'
 import {VideoInfo} from '../VideoInfo/Videoinfo.js'
 import {CommentsAdd} from '../CommentsAdd/CommentsAdd.js'
@@ -130,7 +130,6 @@ export class Main extends React.Component {
     
     return (
       <main>
-       
         <Video video={video} image={image} duration={duration}></Video>
         <section className="desktopLayout">
           <div>

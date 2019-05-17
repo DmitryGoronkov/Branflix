@@ -1,0 +1,114 @@
+@import '../../Styles/mixins.scss';
+@import '../../Styles/variables.scss';
+@import '../../Styles/font-face.scss';
+.commentsec{
+    background-color: white;
+    @include side-padding();
+    @media (min-width: 1440px){
+        padding-left: 180px;
+        margin-right: 0px;
+        padding-right: 0px;
+    }
+    &__header{
+        @include subheader();
+        padding-bottom: 2rem;
+        @media(min-width: 1440px){
+            padding-bottom: 2rem;
+        }
+    }
+    &__inputsec{
+        display: flex;
+        &__image{
+            background-image: url("../../Assets/Images/Mohan-muruge.jpg");
+            background-position: center; 
+            background-repeat: no-repeat; 
+            background-size: cover;
+            width: 2.5rem;
+            height: 2.5rem;
+            border-radius: 1.25rem;
+            @media(min-width: 768px){
+                width: 3rem;
+                height: 3rem;
+                border-radius: 1.5rem;
+            }
+            position: relative;
+            top: 1rem;
+            @media (min-width: 768px){
+                top: 1.2rem;
+            }
+        }
+        &__form{
+            width:80%;
+            margin-left:1rem;
+            @media (min-width: 768px){
+                width: 93%;
+            }
+            @media(min-width: 1440px){
+                margin-left:1.25rem;
+                
+            }
+            display: flex;
+            flex-direction: column;
+            &--flex{
+                display: flex;
+                flex-direction: column;
+                @media (min-width: 768px){
+                    flex-direction: row;
+                }
+            }
+            label{
+                @include labels();
+                @media(min-width: 1440px){
+                   margin-bottom:0.5rem;
+                }
+            }
+            #comment{
+                resize: none;
+                border-radius: 0.3rem;
+                box-sizing: border-box;
+                @include inputstyle();
+                @include subheader-com();
+                margin-bottom: 1rem;
+                @media (min-width: 768px){
+                    flex-direction: row;
+                    height: 3rem; 
+                    margin-right: 1rem;
+                    min-width: 440px;
+                    flex-grow: 100;
+                }
+                
+            }
+            #comment:focus{
+                outline:none;
+                border: solid 2px $brainflix-blue;
+            }
+           &__button{
+                height: 3rem;
+                background-color: $brainflix-blue;
+                border: none;
+                @include labels-button();
+                color: white;
+                text-align: center;
+                text-decoration: none;
+                border-radius: 0.3rem;
+                margin-bottom: 1.5rem;
+                @media(min-width: 768px){
+                    width: 160px;
+                    margin-right: 2.5rem;
+                    margin-bottom: 0;
+                    justify-self: right;
+                    
+                }
+                @media(min-width: 1440px){
+                    margin-right: 2rem;
+                }
+            }
+            &__button:focus{
+                outline:none;
+            }
+            &__button:active{
+                background-color:$clicked;
+            }
+        }
+    }
+}
