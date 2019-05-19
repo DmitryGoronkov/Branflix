@@ -60,11 +60,18 @@ const createNewVideo = (req, res) => {
     vidList.push(newVideoList);
     res.json(formatMainVideo(newVideo));
 }
-
+const postComment = (req, res) => {
+    const targetVideo = mainVideos.find(video => video.id === req.params.id);
+    // const updatedVideo = Object.assign(targetVideo, req.body);
+    let updatedVideo = targetVideo;
+    updatedVideo.comments.push(req.body);
+    res.json(updatedVideo);
+}
 
 app.get('/videos', getVideoList);
 app.get('/videos/:id', getMainVideo);
-app.post('/upload', createNewVideo);
+app.put('/videos/:id', postComment);
+app.post('/videos', createNewVideo);
 
 app.listen(port, () => {
     console.log(`This server is listening on the ${port} port`)

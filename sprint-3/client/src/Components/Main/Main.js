@@ -9,8 +9,9 @@ import commentsImageAssign from '../CommentsImageAssign/CommentsImageAssign.js'
 import {NextVideo} from '../NextVideo/NextVideo.js'
 import axios from 'axios'
 import {Link} from "react-router-dom"
+import shortid from 'shortid'
 
-const apiKey="22945958-e024-4268-bb49-d7e141ec7dd2"
+
 
 export class Main extends React.Component {
   state = {
@@ -36,9 +37,12 @@ export class Main extends React.Component {
       id = this.props.match.params.id
   }
   
-    axios.post (`https://project-2-api.herokuapp.com/videos/${id}/comments?api_key=${apiKey}`, {
+    axios.put (`http://localhost:8080/videos/${id}`, {
       name: "Mohan",
-      comment: this.state.comment
+      comment: this.state.comment,
+      id: shortid.generate(),
+      likes: 0,
+      timestamp: Date.now()
       })
       .then (response => {
         console.log(response);
