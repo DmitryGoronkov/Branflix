@@ -48,14 +48,14 @@ export class Main extends React.Component {
       })
   }
   componentDidMount(){
-    axios.get (`https://project-2-api.herokuapp.com/videos?api_key=${apiKey}`)
+    axios.get (`http://localhost:8080/videos`)
       .then (response => {
         this.setState({vidList: response.data})
       })
       .catch (error => {
         console.log("Error receiving data")
       })
-    axios.get (`https://project-2-api.herokuapp.com/videos/1af0jruup5gu/?api_key=${apiKey}`)
+    axios.get (`http://localhost:8080/videos/1af0jruup5gu/`)
       .then (response => {
         this.setState({bigVid: response.data})
         console.log(response.data);
@@ -74,7 +74,7 @@ export class Main extends React.Component {
         id = "1af0jruup5gu"
       }
       
-      axios.get (`https://project-2-api.herokuapp.com/videos/${id}/?api_key=${apiKey}`)
+      axios.get (`http://localhost:8080/videos/${id}`)
       .then (response => {
         this.setState({bigVid: response.data, commentAdded: false})
         console.log(response.data);
@@ -87,7 +87,7 @@ export class Main extends React.Component {
     }
     if (this.state.bigVid.id !== this.props.match.params.id && this.props.match.params.id){
       axios
-        .get (`https://project-2-api.herokuapp.com/videos/${this.props.match.params.id}/?api_key=${apiKey}`)
+        .get (`http://localhost:8080/videos/${this.props.match.params.id}`)
         .then (response => {
           this.setState({bigVid: response.data, mainpage: false})
           console.log(response.data);
@@ -98,7 +98,7 @@ export class Main extends React.Component {
     }
     if (!this.state.mainpage && !this.props.match.params.id){
       axios
-        .get (`https://project-2-api.herokuapp.com/videos?api_key=${apiKey}`)
+        .get (`http://localhost:8080/videos`)
         .then (response => {
           this.setState({vidList: response.data})
         })
@@ -106,7 +106,7 @@ export class Main extends React.Component {
           console.log("Error receiving data")
         })
       axios
-        .get (`https://project-2-api.herokuapp.com/videos/1af0jruup5gu/?api_key=${apiKey}`)
+        .get (`http://localhost:8080/videos/1af0jruup5gu/`)
         .then (response => {
           this.setState({bigVid: response.data, mainpage: true})
           console.log(response.data);
