@@ -17,6 +17,7 @@ export class Main extends React.Component {
   state = {
     comment: '',
     commentAdded: false,
+    likeAdded: false,
     mainpage: true,
     bigVid: { comments: []},
     vidList: []
@@ -51,6 +52,27 @@ export class Main extends React.Component {
         })
       })
   }
+  addLike = (e) => {
+    if (!this.state.bigVid.likeAdded){
+      let id = '';
+      if (!this.props.match.params.id){
+          id="1af0jruup5gu"
+      } else {
+      id = this.props.match.params.id
+      }
+      const updatedLikes = parseInt(this.state.bigVid.likes) + 1;
+      axios.put (`http://localhost:8080/videos/${id}/likes`, {
+          likes: updatedLikes,
+          likeAdded: true
+      })
+          .then (response => {
+              this.setState({likeAdded: true})
+          
+          })
+    }
+    
+
+}
   componentDidMount(){
     axios.get (`http://localhost:8080/videos`)
       .then (response => {
@@ -89,6 +111,24 @@ export class Main extends React.Component {
 
       
     }
+
+    if (this.state.likeAdded){
+      console.log("like added");
+      let id = "";
+      if (this.props.match.params.id){
+        id = this.props.match.params.id;
+      } else { 
+        id = "1af0jruup5gu"
+      }
+      
+      axios.get (`http://localhost:8080/videos/${id}`)
+      .then (response => {
+        this.setState({bigVid: response.data, likeAdded: false})
+        console.log(response.data);
+      })
+      .catch (error => {
+        console.log("Error receiving data")})
+    }
     if (this.state.bigVid.id !== this.props.match.params.id && this.props.match.params.id){
       axios
         .get (`http://localhost:8080/videos/${this.props.match.params.id}`)
@@ -122,7 +162,7 @@ export class Main extends React.Component {
       
   
   render() {
-    const {title,description,channel,views,likes,video,image,timestamp,duration} = this.state.bigVid;
+    const {title,description,channel,views,likes,likeAdded,video,image,timestamp,duration} = this.state.bigVid;
     const numberOfComments = this.state.bigVid.comments.length;
     const listToRender = [];
     
@@ -143,7 +183,9 @@ export class Main extends React.Component {
               channel={channel}
               views={views}
               likes={likes}
-              timestamp={timestamp}>
+              timestamp={timestamp}
+              addLike={this.addLike}
+              likeAdded={likeAdded}>
             </VideoInfo>
             <CommentsAdd numberOfComments={numberOfComments} submit={this.handleSubmit} change={this.handleCommentChange} val={this.state.comment}></CommentsAdd>
             {this.state.bigVid.comments.map((item, index) => {

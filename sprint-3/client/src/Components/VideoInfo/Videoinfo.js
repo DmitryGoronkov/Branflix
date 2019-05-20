@@ -4,7 +4,7 @@ import viewsIcon from '../../Assets/Icons/SVG/Icon-views.svg';
 import likesIcon from '../../Assets/Icons/SVG/Icon-likes.svg';
 import timeConversion from '../TimeConversion/TimeConversion.js'
 export class VideoInfo extends React.Component {
-
+    
     render(){
         const {title,description,channel,views,likes,timestamp} = this.props;
         return(
@@ -24,6 +24,10 @@ export class VideoInfo extends React.Component {
                             <img className="main__subbar__likes__icon" src={likesIcon} alt="likes-icon"/>
                             <span>{likes}</span>
                         </div>
+                        {!this.props.likeAdded ? 
+                        <button onClick={this.props.addLike} className="main__subbar__like">LIKE</button>
+                        : <button className="main__subbar__like">LIKED</button>
+                        }
                     </div>
                 </div>
                 <div className="main__description">{description}</div>

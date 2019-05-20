@@ -55,6 +55,14 @@
         @media (min-width: 768px){
            border-bottom: none;
         }
+        &__like{
+            @include labels();
+            margin-left: 1.4rem;
+            @media (min-width: 1440px){
+                margin-left: 0rem;
+            }
+            background-color: white;
+        }
         &__views{
             display: flex;
             align-items: center;

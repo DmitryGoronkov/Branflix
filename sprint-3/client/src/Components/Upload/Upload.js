@@ -1,11 +1,13 @@
 import React from 'react';
 import './upload.scss';
 import axios from 'axios';
+import {Link} from "react-router-dom";
 
 export class Upload extends React.Component {
     state = {
         title: "",
-        description: ""
+        description: "",
+        commentAdded: false
     }
     handleTitleChange = (e) =>{
         this.setState({
@@ -28,12 +30,16 @@ export class Upload extends React.Component {
             description: this.state.description,
             })
             .then (response => {
-                console.log(response);
+                this.setState({commentAdded:true})
             })
         
         
     }
+
     render(){
+        if (this.state.commentAdded) {
+            return <div className="added"><p className="added__text">Your wonderful video was added</p><Link className="added__button" to="/">GO BACK</Link></div>
+        } 
         return(
             <section className = "upload">
                 <div className="upload--sidemargin">
@@ -54,7 +60,7 @@ export class Upload extends React.Component {
                         <div className="upload__form__border"></div>
                         <div className="upload__form--buttons">
                             <button className="upload__form__publish" type="submit">PUBLISH</button>
-                            <button className="upload__form__cancel" type="submit">CANCEL</button>
+                            <Link className="upload__form__link" to="/"><button className="upload__form__cancel" type="submit">CANCEL</button></Link>
                         </div>
                     </form>
                 </div>
