@@ -1,0 +1,59 @@
+a {
+  text-decoration: none;
+  /* no underline */
+}
+
+@font-face {
+  font-family: 'Main-Font';
+  src: url("../../Assets/Fonts/MainFontReg.otf") format("truetype");
+}
+
+@font-face {
+  font-family: 'Main-Font-Demibold';
+  src: url("../../Assets/Fonts/MainFontDemi.otf") format("truetype");
+}
+
+@font-face {
+  font-family: 'Main-Font-Bold';
+  src: url("../../Assets/Fonts/MainFontBold.otf") format("truetype");
+}
+
+.label {
+  border-top: solid 1px #e0e0e0;
+  padding-top: 2.5rem;
+  margin-bottom: 2.5rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  font-size: 0.75rem;
+  line-height: 1.25rem;
+  color: #AFAFAF;
+  font-family: 'Main-Font-Demibold';
+}
+
+@media (min-width: 426px) {
+  .label {
+    margin-left: 1.5rem;
+    margin-right: 1.5rem;
+  }
+}
+
+@media (min-width: 1440px) {
+  .desktopLayout {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+}
+
+@media (min-width: 1440px) {
+  .desktopBottom {
+    border-bottom: solid 1px #e0e0e0;
+    margin-bottom: 1rem;
+    margin-left: 180px;
+  }
+}
+/*# sourceMappingURL=main.css.map */

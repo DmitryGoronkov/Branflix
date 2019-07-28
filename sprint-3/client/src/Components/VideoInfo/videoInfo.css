@@ -1,0 +1,253 @@
+a {
+  text-decoration: none;
+  /* no underline */
+}
+
+@font-face {
+  font-family: 'Main-Font';
+  src: url("../../Assets/Fonts/MainFontReg.otf") format("truetype");
+}
+
+@font-face {
+  font-family: 'Main-Font-Demibold';
+  src: url("../../Assets/Fonts/MainFontDemi.otf") format("truetype");
+}
+
+@font-face {
+  font-family: 'Main-Font-Bold';
+  src: url("../../Assets/Fonts/MainFontBold.otf") format("truetype");
+}
+
+.main {
+  margin-left: 1rem;
+  margin-right: 1rem;
+  margin-top: 2rem;
+  margin-bottom: 2.5rem;
+}
+
+@media (min-width: 426px) {
+  .main {
+    margin-left: 1.5rem;
+    margin-right: 1.5rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .main {
+    margin-top: 3rem;
+    margin-bottom: 4rem;
+  }
+}
+
+@media (min-width: 1440px) {
+  .main {
+    margin-right: 0px;
+    margin-left: 180px;
+    margin-top: 2.5rem;
+    width: 712px;
+  }
+}
+
+@media (min-width: 768px) {
+  .main--tablet {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    border-bottom: solid 1px #e0e0e0;
+  }
+}
+
+.main__header {
+  color: #323232;
+  line-height: 2rem;
+  font-size: 1.5rem;
+  font-family: 'Main-Font-Bold', sans-serif;
+  margin: 0;
+  margin-bottom: 1rem;
+}
+
+@media (min-width: 542px) {
+  .main__header {
+    font-size: 2.25rem;
+    line-height: 2.75rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .main__header {
+    margin-bottom: 1.5rem;
+  }
+}
+
+@media (min-width: 1440px) {
+  .main__header {
+    margin-bottom: 1rem;
+  }
+}
+
+.main__subinfo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  margin-bottom: 1.5rem;
+}
+
+.main__subinfo__by {
+  font-size: 0.875rem;
+  line-height: 1.375rem;
+  color: #323232;
+  font-family: 'Main-Font-Demibold';
+  margin: 0;
+  margin-right: 0.5rem;
+}
+
+@media (min-width: 426px) {
+  .main__subinfo__by {
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
+}
+
+.main__subinfo__date {
+  font-size: 0.875rem;
+  line-height: 1.375rem;
+  color: #323232;
+  font-family: 'Main-Font-Demibold';
+  margin: 0;
+  color: #e0e0e0;
+}
+
+@media (min-width: 426px) {
+  .main__subinfo__date {
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
+}
+
+.main__subbar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  padding-bottom: 1.5rem;
+  border-bottom: solid 1px #e0e0e0;
+}
+
+@media (min-width: 768px) {
+  .main__subbar {
+    border-bottom: none;
+  }
+}
+
+.main__subbar__like {
+  font-size: 0.75rem;
+  line-height: 1.25rem;
+  color: #AFAFAF;
+  font-family: 'Main-Font-Demibold';
+  margin-left: 1.4rem;
+  background-color: white;
+}
+
+@media (min-width: 1440px) {
+  .main__subbar__like {
+    margin-left: 0rem;
+  }
+}
+
+.main__subbar__views {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 0.875rem;
+  line-height: 1.375rem;
+  color: #323232;
+  font-family: 'Main-Font';
+  margin: 0;
+  margin-right: 1.4rem;
+}
+
+@media (min-width: 426px) {
+  .main__subbar__views {
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .main__subbar__views {
+    margin-right: 1.5rem;
+  }
+}
+
+.main__subbar__views__icon {
+  margin-right: 0.5rem;
+}
+
+.main__subbar__likes {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 0.875rem;
+  line-height: 1.375rem;
+  color: #323232;
+  font-family: 'Main-Font';
+  margin: 0;
+}
+
+@media (min-width: 426px) {
+  .main__subbar__likes {
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
+}
+
+@media (min-width: 1440px) {
+  .main__subbar__likes {
+    margin-right: 2rem;
+  }
+}
+
+.main__subbar__likes__icon {
+  margin-right: 0.5rem;
+}
+
+.main__description {
+  margin-top: 1.5rem;
+  font-size: 0.812rem;
+  line-height: 1.125rem;
+  color: #323232;
+  font-family: 'Main-Font';
+}
+
+@media (min-width: 768px) {
+  .main__description {
+    margin-top: 2.5rem;
+    margin-right: 210px;
+  }
+}
+
+@media (min-width: 426px) {
+  .main__description {
+    font-size: 0.875rem;
+    line-height: 1.375rem;
+  }
+}
+/*# sourceMappingURL=videoInfo.css.map */

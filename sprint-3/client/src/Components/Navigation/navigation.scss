@@ -20,6 +20,10 @@
         margin-top: 1rem;
         margin-bottom: 0.5rem;
         height: 2rem;
+        width: 4rem;
+        & img{
+            width: 150px;
+        }
         @media (min-width: 768px){
            margin-right: 169px; 
         }

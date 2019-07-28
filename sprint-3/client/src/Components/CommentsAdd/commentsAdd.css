@@ -1,0 +1,234 @@
+a {
+  text-decoration: none;
+  /* no underline */
+}
+
+@font-face {
+  font-family: 'Main-Font';
+  src: url("../../Assets/Fonts/MainFontReg.otf") format("truetype");
+}
+
+@font-face {
+  font-family: 'Main-Font-Demibold';
+  src: url("../../Assets/Fonts/MainFontDemi.otf") format("truetype");
+}
+
+@font-face {
+  font-family: 'Main-Font-Bold';
+  src: url("../../Assets/Fonts/MainFontBold.otf") format("truetype");
+}
+
+.commentsec {
+  background-color: white;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+@media (min-width: 426px) {
+  .commentsec {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}
+
+@media (min-width: 1440px) {
+  .commentsec {
+    padding-left: 180px;
+    margin-right: 0px;
+    padding-right: 0px;
+  }
+}
+
+.commentsec__header {
+  font-size: 0.875rem;
+  line-height: 1.375rem;
+  color: #323232;
+  font-family: 'Main-Font-Demibold';
+  margin: 0;
+  padding-bottom: 2rem;
+}
+
+@media (min-width: 426px) {
+  .commentsec__header {
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
+}
+
+@media (min-width: 1440px) {
+  .commentsec__header {
+    padding-bottom: 2rem;
+  }
+}
+
+.commentsec__inputsec {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.commentsec__inputsec__image {
+  background-image: url("../../Assets/Images/Mohan-muruge.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 1.25rem;
+  position: relative;
+  top: 1rem;
+}
+
+@media (min-width: 768px) {
+  .commentsec__inputsec__image {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 1.5rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .commentsec__inputsec__image {
+    top: 1.2rem;
+  }
+}
+
+.commentsec__inputsec__form {
+  width: 80%;
+  margin-left: 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+@media (min-width: 768px) {
+  .commentsec__inputsec__form {
+    width: 93%;
+  }
+}
+
+@media (min-width: 1440px) {
+  .commentsec__inputsec__form {
+    margin-left: 1.25rem;
+  }
+}
+
+.commentsec__inputsec__form--flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+@media (min-width: 768px) {
+  .commentsec__inputsec__form--flex {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+}
+
+.commentsec__inputsec__form label {
+  font-size: 0.75rem;
+  line-height: 1.25rem;
+  color: #AFAFAF;
+  font-family: 'Main-Font-Demibold';
+}
+
+@media (min-width: 1440px) {
+  .commentsec__inputsec__form label {
+    margin-bottom: 0.5rem;
+  }
+}
+
+.commentsec__inputsec__form #comment {
+  resize: none;
+  border-radius: 0.3rem;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border: solid 1px #e0e0e0;
+  background-color: #FAFAFA;
+  padding: 0.8rem;
+  font-size: 0.875rem;
+  line-height: 1.375rem;
+  color: #323232;
+  font-family: 'Main-Font';
+  margin: 0;
+  margin-bottom: 1rem;
+}
+
+@media (min-width: 426px) {
+  .commentsec__inputsec__form #comment {
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .commentsec__inputsec__form #comment {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    height: 3rem;
+    margin-right: 1rem;
+    min-width: 440px;
+    -webkit-box-flex: 100;
+        -ms-flex-positive: 100;
+            flex-grow: 100;
+  }
+}
+
+.commentsec__inputsec__form #comment:focus {
+  outline: none;
+  border: solid 2px #00ac42;
+}
+
+.commentsec__inputsec__form__button {
+  height: 3rem;
+  background-color: #00ac42;
+  border: none;
+  font-size: 0.8rem;
+  line-height: 1.25rem;
+  color: white;
+  font-family: 'Main-Font-Demibold';
+  margin: 0;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 0.3rem;
+  margin-bottom: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .commentsec__inputsec__form__button {
+    width: 160px;
+    margin-right: 2.5rem;
+    margin-bottom: 0;
+    -ms-grid-column-align: right;
+        justify-self: right;
+  }
+}
+
+@media (min-width: 1440px) {
+  .commentsec__inputsec__form__button {
+    margin-right: 2rem;
+  }
+}
+
+.commentsec__inputsec__form__button:focus {
+  outline: none;
+}
+
+.commentsec__inputsec__form__button:active {
+  background-color: #181769;
+}
+/*# sourceMappingURL=commentsAdd.css.map */
